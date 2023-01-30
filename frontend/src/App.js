@@ -1,9 +1,15 @@
+import Navigation from "./components/Navigation";
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className=" text-lg">
-      hello there
-    </div>
+    <BrowserRouter>
+    <Navigation/>
+    <Routes>
+      <Route exact path='/' element={<Home/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
