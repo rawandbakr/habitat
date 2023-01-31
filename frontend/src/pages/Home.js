@@ -8,7 +8,7 @@ export default function Home() {
         <img
           src={require("../imgs/img1.jpg")}
           alt="a"
-          className=" object-cover h-full w-full"
+          className=" object-cover w-full rounded-3xl p-2"
         />
       </div>
       {/* about us section */}

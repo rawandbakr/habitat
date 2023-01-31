@@ -3,12 +3,12 @@ import { BsFacebook, BsInstagram } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white flex flex-rows p-4 text-sm justify-around">
+    <footer className="bg-black text-white flex flex-col md:flex-row p-4 text-sm justify-around ">
       {/* newsletter section */}
       <div className=' flex flex-col'>
         <h5>NEWSLETTER</h5>
         <form className='flex flex-col'>
-          <div className='flex flex-row'>
+          <div className='flex flex-col md:flex-row '>
           <input placeholder="NAME:" type="text" className='m-2 bg-black outline-none border-b-2' />
           <input placeholder="EMAIL:"type="email" className='m-2 bg-black outline-none border-b-2'/> 
           </div>

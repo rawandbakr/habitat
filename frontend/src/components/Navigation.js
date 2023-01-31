@@ -4,26 +4,26 @@ import { BsFacebook, BsInstagram } from "react-icons/bs";
 
 export default function Navigation() {
   return (
-    <nav className="sticky top-0 flex flex-row bg-primary text-secondary">
-      <div className="flex flex-col  w-11/12">
-          <h1 className=" p-2 flex justify-center"> Website Name</h1>
+    <div className="flex flex-row bg-primary text-secondary rounded-b-3xl ">
+      <div className="flex flex-col w-11/12">
+          <h1 className="flex justify-center pt-3"> Website Name</h1>
           <li className="flex justify-center items-center ">
             <NavItem to="/" name="Home" />
-            <NavItem to="/portfolio" name="Studio" />
+            <NavItem to="/studio" name="Studio" />
             <NavItem to="/blog" name="Blog" />
             <NavItem to="/contact" name="Contact" />
           </li>
       </div>
-      <div className="flex flex-col justify-center space-y-2">
-        <a className=" pb-2 hover:rounded-xl hover:text-accent" 
+      <div className="flex flex-col justify-center">
+        <a className="pb-4 pl-4 hover:rounded-xl hover:text-accent" 
         href="https://www.facebook.com/">
           <BsFacebook />
         </a>
-        <a className=" pb-2 hover:rounded-xl hover:text-accent" 
+        <a className="pl-4 hover:rounded-xl hover:text-accent" 
         href="https://www.instagram.com/">
           <BsInstagram />
         </a>
       </div>
-    </nav>
+    </div>
   );
 }

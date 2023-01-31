@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body{
-    @apply font-mono
+    font-family: 'EB Garamond', serif;
+    @apply bg-secondary
 }
 
 /* font-family: 'EB Garamond', serif;
