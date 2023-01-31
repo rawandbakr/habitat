@@ -3,7 +3,7 @@ import { BsFacebook, BsInstagram } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <div className="bg-black text-white flex flex-rows p-4 text-sm justify-around">
+    <footer className="bg-black text-white flex flex-rows p-4 text-sm justify-around">
       {/* newsletter section */}
       <div className=' flex flex-col'>
         <h5>NEWSLETTER</h5>
@@ -38,6 +38,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
