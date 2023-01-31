@@ -13,7 +13,7 @@ export default function Home() {
       </div>
       {/* about us section */}
       <div className="flex flex-row m-4">
-        <div className="flex w-1/3 flex-col ">
+        <div className="flex w-1/3 flex-col mr-2 ">
           <h1 className=" font-bold m-2">ABOUT US</h1>
           <br />
           <br />
@@ -37,7 +37,7 @@ export default function Home() {
       {/*  OUR DESIGN PHILOSOPHY section*/}
       <div className="flex flex-row m-4">
         
-        <div className="flex w-2/3">
+        <div className="flex w-2/3 mr-2">
           {/* some photos */}
           <img
             className=" rounded-md"

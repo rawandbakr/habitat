@@ -6,7 +6,7 @@ export default function BlogCard() {
 <div className="max-w-xs p-1">
     <div className="bg-primary shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
         <a href="#">
-            <img className="rounded-t-lg" src={require("../imgs/img1.jpg")} alt=""/>
+            <img className="rounded-t-lg" src={require("../imgs/img2.jpg")} alt=""/>
         </a>
         <div className="p-5">
             <a href="#">
