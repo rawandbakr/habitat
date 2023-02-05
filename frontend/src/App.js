@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import Studio from "./pages/Studio";
 import BlogPost from "./pages/BlogPost";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,5 +22,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
+export default App; 
