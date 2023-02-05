@@ -8,11 +8,11 @@ export default function Home() {
         <img
           src={require("../imgs/img1.jpg")}
           alt="a"
-          className="bg-fixed bg-center object-cover w-full rounded-3xl p-2"
+          className="bg-center object-cover w-full rounded-3xl p-2 max-h-96"
         />
       </div>
       {/* about us section */}
-      <div className="flex flex-col md:flex-row m-4">
+      <div className="flex flex-col md:flex-row m-4 ">
         <div className="flex lg:w-1/2 md:w-1/3 flex-col md:mr-2 mb-3 ">
           <h1 className=" font-bold m-2">ABOUT US</h1>
           <br />
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </div>
       {/*  OUR DESIGN PHILOSOPHY section*/}
-      <div className="flex flex-col md:flex-row m-4">
+      <div className="flex flex-col md:flex-row m-4 ">
         {/* some photos */}
         <div className="flex lg:w-1/2 md:w-2/3 md:justify-start">
           

@@ -8,24 +8,24 @@ export default function Footer() {
       <div className=' flex flex-col'>
         <h5>NEWSLETTER</h5>
         <form className='flex flex-col'>
-          <div className='flex flex-col md:flex-row '>
-          <input placeholder="NAME:" type="text" className='m-2 bg-black outline-none border-b-2' />
-          <input placeholder="EMAIL:"type="email" className='m-2 bg-black outline-none border-b-2'/> 
+          <div className='flex flex-row w-44 '>
+          <input placeholder="NAME:" type="text" className='m-2 bg-black outline-none border-b-2 rounded-br-lg' />
+          <input placeholder="EMAIL:"type="email" className='m-2 bg-black outline-none border-b-2 rounded-br-lg'/> 
           </div>
-          <button type="submit" className='text-left text-xl font-bold text-white hover:bg-white hover:text-black w-20 hover:rounded'>SUBMIT</button>
+          <button type="submit" className='text-left text-xl font-bold text-white hover:bg-white hover:text-black w-20 hover:rounded p-1'>SUBMIT</button>
         </form>
         <br/>
         <br/>
-        <p className='text-xs opacity-50'>COPYRIGHT © 2023 website name DESIGNS INC. ALL RIGHTS RESERVED.</p>
+        <p className='text-xs opacity-30 md:m-0 mb-3'>COPYRIGHT © 2023 website name DESIGNS INC. ALL RIGHTS RESERVED.</p>
       </div>
       {/* contact section */}
-      <div className=' flex flex-col justify-between'>
+      <div className=' flex  flex-row md:flex-col justify-between '>
         <div className='flex flex-col justify-center'>
         <h1>CONTACT US</h1>
-        <a href="mailto:hello@houseofbohn.com">hello@houseofbohn.com</a>
+        <a href="mailto:email@gmail.com">email@gmail.com</a>
         <a href="tel:964000000">+964000000</a>
         </div>
-        <div className="flex items-start">
+        <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row items-start">
           <a
             className="pr-2 hover:rounded-xl hover:text-accent"
             href="https://www.facebook.com/">
