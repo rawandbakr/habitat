@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function BlogPost() {
+export default function BlogPost({post}) {
   return (
     <div className='bg-primary min-h-screen min-w-screen m-2 flex flex-col rounded-lg '>
       <div className=' flex flex-row justify-between'>

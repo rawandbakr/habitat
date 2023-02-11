@@ -3,9 +3,9 @@ const Schema =mongoose.Schema;
 
 const postSchema=new Schema(
     {
-        title:{type:String,require:true},
-        photo:{type:String,require:true},
-        pharaghrap:{type:String,require:true},
+        title:{type:String,require:false},
+        photo:{type:String,require:false},
+        pharaghrap:{type:String,require:false},
 
     },
     {

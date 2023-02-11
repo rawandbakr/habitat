@@ -5,8 +5,8 @@ require("dotenv").config();
 var bodyParser =require('body-parser');
 const app = express();
 const postsRoutes =require('./routes/posts')
-app.use(bodyParser.json({ limit: '30mb', extended: true }))
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
+app.use(bodyParser.json({ limit: '5mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }))
 app.use(cors());
 
 
