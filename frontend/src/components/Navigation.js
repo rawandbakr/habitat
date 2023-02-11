@@ -7,7 +7,7 @@ export default function Navigation() {
     <div className="flex flex-row bg-primary text-secondary rounded-bl-3xl rounded-tr-3xl m-2">
       {/* navigation menu */}
       <div className="flex flex-col w-full md:ml-8">
-          <h1 className="flex justify-center pt-3"> Website Name</h1>
+          <h1 className="flex justify-center pt-3"> HABITAT</h1>
           <li className="flex justify-center items-center ">
             <NavItem to="/" name="Home" />
             <NavItem to="/studio" name="Studio" />

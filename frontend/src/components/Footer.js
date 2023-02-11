@@ -16,7 +16,7 @@ export default function Footer() {
         </form>
         <br/>
         <br/>
-        <p className='text-xs opacity-30 md:m-0 mb-3'>COPYRIGHT © 2023 website name DESIGNS INC. ALL RIGHTS RESERVED.</p>
+        <p className='text-xs opacity-30 md:m-0 mb-3'>COPYRIGHT © 2023 HABITAT DESIGNS INC. ALL RIGHTS RESERVED.</p>
       </div>
       {/* contact section */}
       <div className=' flex  flex-row md:flex-col justify-between '>
