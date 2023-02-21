@@ -13,10 +13,7 @@ export default function Navigation() {
             <NavItem to="/studio" name="Studio" />
             <NavItem to="/blog" name="Blog" />
             <NavItem to="/contact" name="Contact" />
-<<<<<<< HEAD
             <NavItem to="/login" name="login" />
-=======
->>>>>>> 315bcb18b63e5724d4f2730407a0fb5bbb48239a
           </li>
       </div>
       {/* socila media icons and links */}
