@@ -1,4 +1,8 @@
 
 # dependencies
 **node_modules
+<<<<<<< HEAD
 **.env
+=======
+.env
+>>>>>>> 315bcb18b63e5724d4f2730407a0fb5bbb48239a
