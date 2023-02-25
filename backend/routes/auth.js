@@ -1,27 +1,40 @@
 const router = require('express').Router();
 const passport = require('passport');
 
-// auth login
-router.get('/login', (req, res) => {
-    res.render('login', { user: req.user });
+
+
+router.get("/login/success", (req, res) => {
+	if (req.user) {
+		res.status(200).json({
+			error: false,
+			message: "Successfully Loged In",
+			user: req.user,
+		});
+	} else {
+		res.status(403).json({ error: true, message: "Not Authorized" });
+	}
 });
 
-// auth logout
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+router.get("/login/failed", (req, res) => {
+	res.status(401).json({
+		error: true,
+		message: "Log in failure",
+	});
 });
 
-// auth with google+
-router.get('/google', passport.authenticate('google', {
-    scope: ['profile']
-}));
+router.get("/google", passport.authenticate("google", ["profile", "email"]));
 
-// callback route for google to redirect to
-// hand control to passport to use code to grab profile info
-router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    // res.send(req.user);
-    res.redirect('/posts');
+router.get(
+	"/google/callback",
+	passport.authenticate("google", {
+		successRedirect: process.env.CLIENT_URL,
+		failureRedirect: "/login/failed",
+	})
+);
+
+router.get("/logout", (req, res) => {
+	req.logout();
+	res.redirect(process.env.CLIENT_URL);
 });
 
 module.exports = router;

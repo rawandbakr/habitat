@@ -5,7 +5,7 @@ const postSchema=new Schema(
     {
         title:{type:String,require:false},
         photo:{type:String,require:false},
-        pharaghrap:{type:String,require:false},
+        ph:{type:String,require:false},
 
     },
     {

@@ -3,7 +3,10 @@ import {FcGoogle} from 'react-icons/fc'
 
 export default function Login() {
   const google = () => {
-    window.open("http://localhost:4000/auth/google", "_self");
+    window.open(
+			`http://localhost:8080/auth/google/callback`,
+			"_self"
+		);
   };
   return (
     <div className="bg-secondary min-h-screen min-w-screen  flex justify-center items-center m-1">

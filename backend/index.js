@@ -9,19 +9,19 @@ const postsRoutes =require('./routes/posts')
 require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth")
-const session = require('express-session')
+// const session = require('express-session')
 
 
-app.use(session({
-  secret: 'somethingsecretgoeshere',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+app.use(
+	cookieSession({
+		name: "session",
+		keys: ["cyberwolve"],
+		maxAge: 24 * 60 * 60 * 100,
+	})
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 app.use(
   cors({
@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 });
 //setup routes
 app.use('/auth',authRoute)
-app.use('/posts',authRoute,postsRoutes)
+app.use('/posts',postsRoutes)
 //connetc to db
 mongoose
   .connect(process.env.MONG_URI)

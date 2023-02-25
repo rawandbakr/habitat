@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const postUrl='http://localhost:4000/posts';
+const postUrl='http://localhost:8080/posts';
 
 export const fetchPosts=()=> axios.get(postUrl);
 export const fetchPost=(id)=> axios.get(`${postUrl}/${id}`);

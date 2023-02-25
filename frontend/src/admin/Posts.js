@@ -3,7 +3,8 @@ import { useDispatch ,useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 import { createPost,getposts,removePost } from "../actions/posts";
 
-export default function Posts() {
+export default function Posts(userDetails) {
+  const user = userDetails.user;
   const dispatch = useDispatch();
   const posts= useSelector((state) => state.posts.value)
 
@@ -22,7 +23,7 @@ export default function Posts() {
     setPostData({
       title: "",
       photo: "",
-      pharagraph: "",
+      pharaghrap: "",
     });
   }
     const handleSubmit = async (e) => {
@@ -38,6 +39,11 @@ export default function Posts() {
 
     return (
       <div className="m-2 p-2">
+        <div>
+          <h1>{user.username}</h1>
+          <img src={user.thumbnail} alt="profile" />
+          <h1>{user.email}</h1>
+        </div>
         {/* posting section */}
         <div className="">
           <form
@@ -105,7 +111,8 @@ export default function Posts() {
 
             {posts &&
           posts.map((post) => (
-            <tr className="border-t hover:bg-gray-200">
+            <tr key={post._id}
+            className="border-t hover:bg-gray-200">
                 <td className="p-2">{post._id}</td>
                 <td className="p-2">{post.title}</td>
                 <td className="p-2">

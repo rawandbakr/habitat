@@ -3,6 +3,9 @@ import NavItem from "./NavItem";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 
 export default function Navigation() {
+  const logout = () => {
+    window.open("http://localhost:4000/auth/logout", "_self");
+  };
   return (
     <div className="flex flex-row bg-primary text-secondary rounded-bl-3xl rounded-tr-3xl m-2">
       {/* navigation menu */}
@@ -14,6 +17,8 @@ export default function Navigation() {
             <NavItem to="/blog" name="Blog" />
             <NavItem to="/contact" name="Contact" />
             <NavItem to="/login" name="login" />
+            <NavItem to="/posts" name="posts" />
+            <button onClick={logout}>logout</button>
           </li>
       </div>
       {/* socila media icons and links */}
