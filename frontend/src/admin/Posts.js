@@ -15,7 +15,7 @@ export default function Posts(userDetails) {
   const [postData, setPostData] = useState({
     title: "",
     photo: "",
-    pharaghrap: "",
+    ph: "",
   });
   const [error, setError] = useState(null);
 
@@ -23,7 +23,7 @@ export default function Posts(userDetails) {
     setPostData({
       title: "",
       photo: "",
-      pharaghrap: "",
+      ph: "",
     });
   }
     const handleSubmit = async (e) => {
@@ -39,11 +39,7 @@ export default function Posts(userDetails) {
 
     return (
       <div className="m-2 p-2">
-        <div>
-          <h1>{user.username}</h1>
-          <img src={user.thumbnail} alt="profile" />
-          <h1>{user.email}</h1>
-        </div>
+        
         {/* posting section */}
         <div className="">
           <form
@@ -66,9 +62,9 @@ export default function Posts(userDetails) {
             <input
                 className=" flex w-1/3 rounded-md outline-none"
                 type="text"
-                value={postData.pharaghrap}
+                value={postData.ph}
                 onChange={(e) =>
-                  setPostData({ ...postData, pharaghrap: e.target.value })
+                  setPostData({ ...postData, ph: e.target.value })
                 }
               />
             <label className="formLabel">

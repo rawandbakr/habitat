@@ -8,9 +8,9 @@ const getPosts=async(req,res) =>{
 }
 // createPosts
 const createPost=async (req,res)=>{
-    const {pharaghrap,photo,title}=req.body
+    const {ph,photo,title}=req.body
     try {
-        const post=await posts.create({title,photo,pharaghrap})
+        const post=await posts.create({title,photo,ph})
         res.status(200).json(post)
     } catch (error) {
         res.status(400).json({error: error.message})

@@ -18,9 +18,7 @@ function App() {
 		try {
 			const url = `http://localhost:8080/auth/login/success`;
 			const { data } = await axios.get(url, { withCredentials: true });
-			setUser(data.user);
-      console.log(data.user)
-      
+			setUser(data.user);      
 		} catch (err) {
 			console.log(err);
 		}
@@ -32,7 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Navigation/>
+    <Navigation user={user}/>
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route exact path='/blog' element={<Blog/>}/>

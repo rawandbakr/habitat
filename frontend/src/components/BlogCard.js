@@ -11,9 +11,9 @@ export default function BlogCard({post}) {
         </a>
         <div className="p-5">
             <a href="#">
-                <h5 className="text-accent font-bold text-2xl tracking-tight mb-2">{post.titel}</h5>
+                <h5 className="text-accent font-bold text-2xl tracking-tight mb-2">{post.title}</h5>
             </a>
-            <p className=" font-thin mb-3">{post.pharaghrap}</p>
+            <p className=" font-thin mb-3">{post.ph}</p>
             <Link to='/blog/:id'>
             <a className="text-primary bg-accent hover:bg-opacity-80 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
                 Read more
