@@ -1,6 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
+import {GoSignOut} from "react-icons/go"
 
 export default function Navigation(userDetails) {
   const user = userDetails.user;
@@ -13,29 +14,30 @@ export default function Navigation(userDetails) {
       <div className="flex flex-col w-full md:ml-8">
         <h1 className="flex justify-center pt-3"> HABITAT</h1>
         <div className="flex flex-row justify-center items-center  ">
+          {/* profile section */}
           <div className="flex">
             {user ? (
               <div className="flex ">
-                {/* profile section */}
-                <div className="flex flex-row justify-center items-center">
-                  <h1 className=" inline-block font-bold text-black">
+                {/* profile section user name and proflie pic*/}
+                <div className="flex md:flex-row flex-col justify-center items-center">
+                  <h1 className="sm:text-sm font-bold text-black ml-1">
                     {" "}
                     welcome back {user.username}
                   </h1>
                   <img
                     src={user.thumbnail}
                     alt="profilepic"
-                    className="ml-2 rounded-full h-12 w-12"
+                    className="ml-2 mb-1 rounded-full h-12 w-12"
                   />
                 </div>
-                  <NavItem to="/posts" name="posts" />
-                  <button onClick={logout}>logout</button>
-                
+                <button onClick={logout}><GoSignOut/></button>
+                <NavItem to="/posts" name="posts" />
               </div>
             ) : (
               <NavItem to="/login" name="login" />
             )}
           </div>
+          {/* nav list section */}
           <li className="flex ">
             <NavItem to="/" name="Home" />
             <NavItem to="/studio" name="Studio" />
