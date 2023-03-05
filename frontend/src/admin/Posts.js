@@ -3,8 +3,7 @@ import { useDispatch ,useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 import { createPost,getposts,removePost } from "../actions/posts";
 
-export default function Posts(userDetails) {
-  const user = userDetails.user;
+export default function Posts() {
   const dispatch = useDispatch();
   const posts= useSelector((state) => state.posts.value)
 

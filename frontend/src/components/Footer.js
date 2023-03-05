@@ -8,7 +8,7 @@ export default function Footer() {
       <div className=' flex flex-col'>
         <h5>NEWSLETTER</h5>
         <form className='flex flex-col'>
-          <div className='flex flex-row w-44 '>
+          <div className='flex md:flex-row flex-col w-44 '>
           <input placeholder="NAME:" type="text" className='m-2 bg-black outline-none border-b-2 rounded-br-lg' />
           <input placeholder="EMAIL:"type="email" className='m-2 bg-black outline-none border-b-2 rounded-br-lg'/> 
           </div>

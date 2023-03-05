@@ -5,6 +5,7 @@ export const PostSlice = createSlice({
   initialState: {
     value:[],
     link:[],
+    singlepost:[]
   },
   reducers: {
     FETCH_ALL: (state,action) => {
@@ -15,11 +16,14 @@ export const PostSlice = createSlice({
     },
     DELETE: (state, action) => {
       state.value=state.value.filter((val)=>val._id!==action.payload._id);
+    },
+    FETCH_SINGLE:(state,action)=>{
+      state.singlepost=action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { FETCH_ALL, CREATE, DELETE } = PostSlice.actions
+export const { FETCH_ALL, CREATE, DELETE,FETCH_SINGLE } = PostSlice.actions
 
 export default PostSlice.reducer

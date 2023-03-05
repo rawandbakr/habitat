@@ -39,7 +39,7 @@ function App() {
       <Route exact path='/studio' element={<Studio/>}/>
       <Route exact path='blog/:id' element={<BlogPost/>}/>
       <Route exact path='login' element={<Login/>}/>
-      <Route exact path='/posts' element={user ?<Posts user={user} key={user._id}/>: <Navigate to="/login" />}/>
+      <Route exact path='/posts' element={user&&user.role==="admin" ?<Posts user={user} key={user._id}/>: <Navigate to="/login" />}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
