@@ -18,6 +18,7 @@ export const PostSlice = createSlice({
       state.value=state.value.filter((val)=>val._id!==action.payload._id);
     },
     FETCH_SINGLE:(state,action)=>{
+      //state.singlepost=state.value.filter((val)=>val===action.payload)
       state.singlepost=action.payload
     }
   },

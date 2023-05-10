@@ -33,7 +33,8 @@ const User = require('./models/user-model');
             googleId: profile.id,
             email: profile.emails[0].value,
             name: profile.displayName,
-            role: 'user', // set default role to 'user'
+            role: 'admin',
+            profilePhoto:profile.photos[0].value
           });
 
           await newUser.save();

@@ -92,10 +92,13 @@ export default function Posts() {
             <thead>
               <tr>
                 <th className="text-sm font-semibold text-gray-700 p-2 bg-gray-100">
-                  ID
+                Title
                 </th>
                 <th className="text-sm font-semibold text-gray-700 p-2 bg-gray-100">
-                  Title
+                  pharaghrap
+                </th>
+                <th className="text-sm font-semibold text-gray-700 p-2 bg-gray-100">
+                  photoCard
                 </th>
                 <th className="text-sm font-semibold text-gray-700 p-2 bg-gray-100">
                   Action
@@ -103,40 +106,26 @@ export default function Posts() {
               </tr>
             </thead>
             <tbody>
-
             {posts &&
           posts.map((post) => (
             <tr key={post._id}
             className="border-t hover:bg-gray-200">
-                <td className="p-2">{post._id}</td>
                 <td className="p-2">{post.title}</td>
+                <td className="p-2">{post.ph}</td>
                 <td className="p-2">
-                  {/* <a href="#" className="text-blue-500 hover:underline">
-                    Update
-                  </a> */}
+                  <img className="p-2 h-11 w-11 object-cover" src={post.photo} alt='pic'/>
+                  
+                </td>
+                <td className="p-2">
                   <button
                   onClick={()=> dispatch(removePost(post._id))}
-                  className="text-red-500 hover:underline ml-4">
+                  className="text-red-500 hover:bg-red-600 hover:text-white rounded p-2 ml-4">
                     Delete
                   </button>
                 </td>
               </tr>
 
           ))}
-
-
-              {/* <tr className="border-t hover:bg-gray-200">
-                <td className="p-2">1</td>
-                <td className="p-2">Example Title 1</td>
-                <td className="p-2">
-                  <a href="#" className="text-blue-500 hover:underline">
-                    Update
-                  </a>
-                  <a href="#" className="text-red-500 hover:underline ml-4">
-                    Delete
-                  </a>
-                </td>
-              </tr> */}
             </tbody>
           </table>
         </div>

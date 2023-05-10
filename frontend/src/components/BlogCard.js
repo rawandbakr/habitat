@@ -4,23 +4,17 @@ import { Link } from "react-router-dom";
 export default function BlogCard({ post }) {
   return (
     <div className="md:max-w-xs md:p-1 w-full">
-      <div className="bg-primary shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-        <img className="rounded-t-lg" src={post.photo} alt="" />
-        <div className="p-5">
-          <h1 href="#">
-            <h5 className="text-accent font-bold text-2xl tracking-tight mb-2">
-              {post.title}
-            </h5>
-          </h1>
-          <p className=" font-thin mb-3">{post.ph}</p>
-          <Link to={post._id}>
-            <h1
-              className="text-primary bg-accent hover:bg-opacity-80 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
-              href="#">
-              Read more
-            </h1>
-          </Link>
-        </div>
+      <div className="relative bg-primary shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 ">
+        <Link to={post._id}>
+          <img
+            className="rounded-t-lg w-full h-52 object-cover scale-90 hover:scale-110"
+            src={post.photo}
+          />
+          <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-accent opacity-70">
+            <h3 className="text-xl text-primary font-bold">{post.title}</h3>
+            <p className="mt-2 text-sm text-gray-300">{post.ph}</p>
+          </div>
+        </Link>
       </div>
     </div>
   );

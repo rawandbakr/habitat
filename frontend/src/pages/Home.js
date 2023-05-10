@@ -4,11 +4,11 @@ export default function Home() {
   return (
     <div className=" bg-secondary min-h-screen min-w-screen flex flex-col">
       {/* main photo  */}
-      <div>
+      <div className="flex justify-center">
         <img
           src={require("../imgs/img1.jpg")}
           alt="a"
-          className="bg-center object-cover w-full rounded-3xl p-2 max-h-96"
+          className="bg-center  w-auto rounded-3xl p-2 h-96"
         />
       </div>
       {/* about us section */}

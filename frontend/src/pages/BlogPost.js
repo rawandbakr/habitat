@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux';
 import {getpost} from '../actions/posts'
@@ -7,13 +7,17 @@ import moment from 'moment'
 
 export default function BlogPost() {
   const {id}=useParams()
+  const post=('')
+  const [loading , setLoading]=useState(true)
   const dispatch = useDispatch();
-  const post= useSelector((state) => state.posts.singlepost)
   useEffect(() => {
     dispatch(getpost(id));
+    setLoading(false)
   },[dispatch]);  
+  post= useSelector((state) => state.posts.singlepost)
 
-  return (
+  return (<div>
+    {loading?<h1>loading</h1>:
     <div className='bg-primary min-h-screen min-w-screen m-2 flex flex-col rounded-lg '>
       <div className=' flex flex-row justify-between'>
       <h1 className='m-3'>{post.title}</h1>
@@ -27,5 +31,7 @@ export default function BlogPost() {
      {/* comments section */}
      <span> comments</span>
     </div>
+  }
+  </div>
   )
 }
