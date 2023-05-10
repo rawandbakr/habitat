@@ -8,7 +8,7 @@ export default function Home() {
         <img
           src={require("../imgs/img1.jpg")}
           alt="a"
-          className="bg-center  w-auto rounded-3xl p-2 h-96"
+          className=" object-cover w-auto h-auto md:w-full rounded-3xl p-2 md:h-[700px]"
         />
       </div>
       {/* about us section */}

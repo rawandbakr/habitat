@@ -2,11 +2,29 @@ import {useState} from "react";
 import NavItem from "./NavItem";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { GoSignOut } from "react-icons/go";
-import { FcMenu,FcMinus } from "react-icons/fc";
+import { RiMenu3Fill,RiCloseLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 export default function Navigation(userDetails) {
   const [toggle, setToggle] = useState(false);
+  const navitems = [
+    {
+      id: "home",
+      title: "Home",
+    },
+    {
+      id: "about",
+      title: "About",
+    },
+    {
+      id: "contact",
+      title: "Contact",
+    },
+    {
+      id: "blog",
+      title: "Blog",
+    },
+  ];
 
   const user = userDetails.user;
   const logout = () => {
@@ -77,15 +95,19 @@ export default function Navigation(userDetails) {
        {/* navigation bar on small screen*/}
        <div className="md:hidden flex flex-col
          justify-end items-center">
-            {toggle ? <FcMinus onClick={() => setToggle(!toggle)}/> : <FcMenu onClick={() => setToggle(!toggle)}/>}
+            {toggle ? <RiCloseLine onClick={() => setToggle(!toggle)}/> : <RiMenu3Fill onClick={() => setToggle(!toggle)}/>}
         <div className={`${!toggle ? "hidden" : "flex"}
            z-10 absolute top-10 bg-primary bg-opacity-90 rounded-xl right-0 left-0`}>
             <ul className="flex justify-end items-start">
-          <li className="flex flex-col" onClick={() => {setToggle(!toggle)}}>
-            <NavItem  to="/studio" name="Studio" />
-            <NavItem to="/" name="Home" />
-            <NavItem to="/blog" name="Blog" />
-            <NavItem to="/contact" name="Contact" />
+          <li className="flex flex-col">
+            {navitems.map((navitem)=>{
+            <Link 
+            className="p-2 m-2 hover:shadow-2xl hover:border-r-2 hover:rounded-xl hover:text-accent" 
+            to={navitem.id}
+            >
+              {navitem.name}
+            </Link>
+            })}
           </li>
           </ul>
             {/* profile section */}
@@ -116,5 +138,6 @@ export default function Navigation(userDetails) {
         </div>
       </div>
     </div>
+  
   );
 }
