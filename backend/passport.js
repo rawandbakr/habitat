@@ -33,7 +33,7 @@ const User = require('./models/user-model');
             googleId: profile.id,
             email: profile.emails[0].value,
             name: profile.displayName,
-            role: 'admin',
+            role: 'user',
             profilePhoto:profile.photos[0].value
           });
 

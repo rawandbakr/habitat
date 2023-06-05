@@ -7,7 +7,7 @@ import moment from 'moment'
 
 export default function BlogPost() {
   const {id}=useParams()
-  const post=('')
+  var post=('')
   const [loading , setLoading]=useState(true)
   const dispatch = useDispatch();
   useEffect(() => {
