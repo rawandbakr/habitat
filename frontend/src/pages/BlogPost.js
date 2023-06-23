@@ -14,6 +14,7 @@ export default function BlogPost() {
     dispatch(getpost(id));
     setLoading(false)
   },[dispatch]);  
+
   post= useSelector((state) => state.posts.singlepost)
 
   return (<div>
