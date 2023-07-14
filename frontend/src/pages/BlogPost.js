@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useLayoutEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux';
 import {getpost} from '../actions/posts'
@@ -10,7 +10,7 @@ export default function BlogPost() {
   var post=('')
   const [loading , setLoading]=useState(true)
   const dispatch = useDispatch();
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(getpost(id));
     setLoading(false)
   },[dispatch]);  

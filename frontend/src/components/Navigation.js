@@ -9,7 +9,6 @@ export default function Navigation(userDetails) {
   const [toggle, setToggle] = useState(false);
   const navitems = [
     {
-    
       id: "/",
       title: "Home",
     },
@@ -22,7 +21,6 @@ export default function Navigation(userDetails) {
       title: "Contact",
     },
     {
-     
       id: "/blog",
       title: "Blog",
     },
@@ -97,36 +95,33 @@ export default function Navigation(userDetails) {
         </a>
       </div>
       {/* navigation bar on small screen*/}
-      <div className="h-10 w-11/12 flex flex-auto justify-end items-center p-2 md:hidden">
+      <div className="h-10 w-11/12 flex flex-auto justify-between items-center p-2 md:hidden">
+        <Link to="/">HABITAT</Link>
         {toggle ? (
-          <RiCloseLine
-           onClick={() => setToggle(false)} />
+          <RiCloseLine onClick={() => setToggle(false)} />
         ) : (
-          <RiMenu3Fill 
-          onClick={() => setToggle(true)} />
+          <RiMenu3Fill onClick={() => setToggle(true)} />
         )}
-        {toggle?<div
-          className="absolute top-[110px] right-2 h-auto w-28 p-5 flex z-10 rounded-md  text-white bg-primary">
-           {/* navigation menu */}
-          <ul className="flex flex-col space-y-3">
-            {navitems.map((navit)=>{
-              return (
-                <li key={navit.title}>
-                  <NavItem
-                    to={navit.id}
-                    name={navit.title}
-                  />
-                </li>
-              );
-              
-            })}
+        {toggle ? (
+          <div className=" absolute justify-center top-[80px] right-5 w-fit  h-max p-5 flex z-10 bg-white backdrop-blur bg-opacity-30 rounded-lg">
+            {/* navigation menu */}
+            <ul className="flex flex-col space-y-3">
+              {navitems.map((navit) => {
+                return (
+                  <li
+                    key={navit.title}
+                    onClick={() => setToggle(false)}
+                    className="hover:bg-black rounded-lg hover:bg-opacity-20 w-fit text-center text-black">
+                    <NavItem to={navit.id} name={navit.title} />
+                  </li>
+                );
+              })}
             </ul>
-        </div>
-        :
-        <></>}
-        
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
-
     </div>
   );
 }
